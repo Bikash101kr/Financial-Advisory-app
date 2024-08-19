@@ -102,9 +102,9 @@ header .logo img {
     background: url('images/image.png') no-repeat center center/cover;
     text-align: center;
     padding: 150px 20px;
-    position: relative;
+    position: abb vc;
     height: 100%;
-    width: 100%;
+    width: auto;
     display: flex;
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
@@ -145,7 +145,7 @@ header .logo img {
     padding: 150px 20px;
     position: relative;
     height: 100%;
-    width: 100%;
+    width: auto;
     display: flex;
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
@@ -159,11 +159,12 @@ header .logo img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     object-fit: cover;
     /* Ensures the video covers the whole section */
     z-index: -1;
 }
+
 
 /* Overlay for Darkening the Background */
 .hero-overlay-video {
@@ -171,7 +172,7 @@ header .logo img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: fit-contentś;
     background-color: rgba(8, 8, 8, 0.5);
     /* Semi-transparent overlay */
     z-index: 0;

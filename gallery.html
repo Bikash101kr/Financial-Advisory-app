@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureFuture Financials - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/gallery.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="SecureFuture Financials Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown-content">
+                            <li><a href="services/financial-planning.html">Financial Planning</a></li>
+                            <li><a href="services/investment-plan.html">Investment Plan</a></li>
+                            <li><a href="services/retirement-plan.html">Retirement Plan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="btn">Book a Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <!-- Hero Section -->
+    <section class="hero contact-hero">
+        <div class="container">
+            <h2>Our Gallery!</h2>
+            <p>Explore our journey through images and videos showcasing our financial services and success stories.</p>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="container">\
+            <div class="gallery-grid">
+                <!-- Thumbnail Images and Video -->
+                <div class="thumbnail" onclick="openModal();currentSlide(1)">
+                    <img src="images/advice.png" alt="Financial Advice">
+                    <p>Expert Financial Advice</p>
+                </div>
+                <div class="thumbnail" onclick="openModal();currentSlide(2)">
+                    <img src="images/financial-strategy.png" alt="Investment Strategy">
+                    <p>Investment Strategy Session</p>
+                </div>
+                <div class="thumbnail" onclick="openModal();currentSlide(3)">
+                    <img src="images/team-meeting.jpeg" alt="Team Meeting">
+                    <p>Collaborative Team Meeting</p>
+                </div>
+                <div class="thumbnail" onclick="openModal();currentSlide(4)">
+                    <div class="video-thumbnail-container">
+                        <video>
+                            <source src="videos/workshop.mp4" alt="Financial Information Video" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button-overlay">
+                            &#9658;
+                        </div>
+                    </div>
+                    <p>Financial Workshop Overview</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Slideshow Modal -->
+        <div id="galleryModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <!-- Full-size Images/Videos -->
+                <div class="mySlides">
+                    <img src="images/advice.png" alt="Financial Advice">
+                    <div class="caption">Expert Financial Advice</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/financial-strategy.png" alt="Investment Strategy">
+                    <div class="caption">Investment Strategy Session</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/team-meeting.jpeg" alt="Investment Strategy">
+                    <div class="caption">Investment Strategy Session</div>
+                </div>
+                <div class="mySlides">
+                    <video controls>
+                        <source src="videos/workshop.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="caption">Financial Workshop Overview</div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Secure Future Financials. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

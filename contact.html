@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureFuture Financials - Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="SecureFuture Financials Logo">
+
+                </a>
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services</a>
+                        <div class="dropdown-content">
+                            <a href="services/financial-planning.html">Financial Planning</a>
+                            <a href="services/investment-plan.html">Investment Plan</a>
+                            <a href="services/retirement-plan.html">Retirement Plan</a>
+                        </div>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="btn">Book a Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero contact-hero">
+        <div class="container">
+            <h2>Contact Us !</h2>
+            <p>We'd love to hear from you! Please reach out to us using the information below.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section id="contact-info" class="content-section">
+        <div class="container">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p><a href="mailto:info@securefuturefinancials.com">info@securefuturefinancials.com</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>Phone</h3>
+                <p><a href="tel:1234567890">(123) 456-7890</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>Address</h3>
+                <p>123 Finance Avenue, Suite 100<br>Wealth City, WC 12345</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="content-section">
+        <div class="container">
+            <h2>Send Us a Message</h2>
+            <form id="contact-form" action="#" method="POST" onsubmit="return handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div id="success-message" class="hidden">
+                <p>Your message has been sent successfully!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SecureFuture Financials. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+
+        // Display the success message
+        document.getElementById('success-message').classList.remove('hidden');
+
+        // Optionally, clear the form fields
+        document.getElementById('contact-form').reset();
+
+        // If you are submitting the form to a server, you would typically use
+        // Fetch or XMLHttpRequest to submit the form data, and handle server responses here.
+
+        return false; // Prevent the form from actually submitting if needed
+    }
+</script>
+
+</html>

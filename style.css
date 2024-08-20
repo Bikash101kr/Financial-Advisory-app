@@ -814,7 +814,7 @@ body {
     }
 
     header nav ul {
-        display: block;
+        display: auto;
     }
 
     header nav ul li {
@@ -855,7 +855,7 @@ body {
     }
 
     header nav {
-        display: block;
+        display: auto;
     }
 
     header nav ul {
@@ -959,12 +959,12 @@ body {
 /* Responsive Media Queries */
 @media (max-width: 768px) {
     .background-video {
-        display: none;
+        display: auto;
         /* Hide video on small screens */
     }
 
     .hero {
-        background: url('path-to-your-fallback-image.jpg') no-repeat center center/cover;
+        background: url('images/image.png') no-repeat center center/cover;
     }
 
     .container h2 {
@@ -993,5 +993,5 @@ body {
 
 /* Additional Accessibility (ARIA) */
 [aria-hidden="true"] {
-    display: none;
+    display: auto;
 }

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SecureFuture Financials</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Registration Page Styling */
+        .register-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+            /* Adjust height according to header */
+            background: url('images/background.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .register-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            /* Dark overlay for better text readability */
+        }
+
+        .register-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            /* Slightly transparent white background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            color: #007BFF;
+            font-size: 24px;
+        }
+
+        .register-container input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .register-container button {
+            width: calc(100% - 20px);
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .register-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .register-container .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .register-container .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .register-container .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Enhanced Error Message Styling */
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            display: none;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-message::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #dc3545;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="SecureFuture Financials Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Static/about-us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="Static/services.html">Services</a>
+                        <ul class="dropdown-content">
+                            <li><a href="Static/services/financial-planning.html">Financial Planning</a></li>
+                            <li><a href="Static/services/investment-plan.html">Investment Plan</a></li>
+                            <li><a href="Static/services/retirement-plan.html">Retirement Plan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Static/blog.html">Blog</a></li>
+                    <li><a href="Static/gallery.html">Gallery</a></li>
+                    <li><a href="Static/contact.html">Contact</a></li>
+                    <li><a href="Static/contact.html" class="btn">Book a Consultation</a></li>
+                    <!-- New Login/Register Options -->
+                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Section -->
+    <div class="register-page">
+        <div class="register-container">
+            <h2>Register</h2>
+            <form id="registrationForm" method="POST" action="php/register.php">
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password"
+                    required>
+                <input type="text" name="address" placeholder="Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <button type="submit" name="register">Register</button>
+                <div class="error-message" id="error-message">Passwords do not match!</div>
+            </form>
+            <div class="footer">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Secure Future Financials. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (password !== confirmPassword) {
+                errorMessage.style.display = 'block';
+                event.preventDefault(); // Prevent form submission
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

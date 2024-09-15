@@ -17,11 +17,12 @@ try {
 
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = $user['role']; // Store role in session
             if ($user['role'] === 'admin') {
                 header('Location: admin_dashboard.php');
             } else {
-                header('Location: ../user_dashboard.html');
+                header('Location: user_dashboard.php');
             }
             exit();
         } else {

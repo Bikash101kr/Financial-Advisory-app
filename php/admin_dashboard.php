@@ -4,7 +4,6 @@ require 'db.php'; // Include your database configuration
 
 // Check if the user is logged in and is an admin
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header('Location: ../admin_dashboard.html');
     exit();
 }
 

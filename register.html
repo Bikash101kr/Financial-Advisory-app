@@ -73,6 +73,21 @@
             display: block;
             margin: 0 auto;
         }
+        .register-container select {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto 15px;
+            background-color: white;
+            font-size: 16px;
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px;
+}
 
         .register-container button:hover {
             background-color: #0056b3;
@@ -155,8 +170,9 @@
     <div class="register-page">
         <div class="register-container">
             <h2>Register</h2>
-            <form id="registrationForm" method="POST" action="php/register.php">
-                <input type="text" name="fullname" placeholder="Full Name" required>
+            <form id="registrationForm" method="POST" action="php/Register.php">
+                <input type="text" name="user_id" placeholder="USER ID" required>
+                <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
                 <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password"

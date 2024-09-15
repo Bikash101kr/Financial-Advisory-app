@@ -21,10 +21,10 @@ try {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     // Fetch investment details (if applicable)
-    $stmt = $conn->prepare("SELECT * FROM portfolio WHERE user_id = :user_id");
-    $stmt->bindParam(':user_id', $userId);
+    $stmt = $conn->prepare("SELECT * FROM portfolio WHERE email = :email");
+    $stmt->bindParam(':email', $userEmail);
     $stmt->execute();
-    $investments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $portfolio = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (!$user) {
         echo "User not found.";

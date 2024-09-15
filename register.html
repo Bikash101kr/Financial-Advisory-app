@@ -179,6 +179,10 @@
                     required>
                 <input type="text" name="address" placeholder="Address" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
+                <select name="role" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="user">user</option>
+                </select>
                 <button type="submit" name="register">Register</button>
                 <div class="error-message" id="error-message">Passwords do not match!</div>
             </form>

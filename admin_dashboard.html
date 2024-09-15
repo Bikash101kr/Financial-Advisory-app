@@ -145,7 +145,7 @@
                             <?php echo htmlspecialchars($user['modified_On']); ?>
                         </td>
                         <td class="action-buttons">
-                            <a href="delete_user.php?id=<?php echo $user['user_id']; ?>" class="delete"
+                            <a href="delete.php?id=<?php echo $user['user_id']; ?>" class="delete"
                                 onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
 
                             <a href="edit.php<?php echo $user['user_id']; ?>" class="edit">Edit </a>

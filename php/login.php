@@ -1,37 +1,34 @@
 <?php
 session_start();
-include 'db.php'; // Database connection
 
-// Registration
-if (isset($_POST['register'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Secure password
-    $role = 'client'; // Default role for users
+try {
+    $conn = new PDO("mysql:host=localhost;dbname=fin_db", "root", "");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', '$role')";
-    mysqli_query($conn, $query);
-    header('Location: login.php');
-}
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-// Login
-if (isset($_POST['login'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $query = "SELECT * FROM users WHERE email='$email'";
-    $result = mysqli_query($conn, $query);
-    $user = mysqli_fetch_assoc($result);
-
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user;
-        if ($user['role'] == 'admin') {
-            header('Location: admin-dashboard.php');
+        if ($user) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['role'] = $user['role']; // Store role in session
+            if ($user['role'] === 'admin') {
+                header('Location: ../admin_dashboard.html');
+            } else {
+                header('Location: ../user_dashboard.html');
+            }
+            exit();
         } else {
-            header('Location: client-dashboard.php');
+            echo 'Invalid email or password!';
         }
-    } else {
-        echo "Invalid email or password.";
     }
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
 ?>

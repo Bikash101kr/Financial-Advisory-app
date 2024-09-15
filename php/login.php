@@ -19,7 +19,7 @@ try {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role']; // Store role in session
             if ($user['role'] === 'admin') {
-                header('Location: ../admin_dashboard.html');
+                header('Location: admin_dashboard.php');
             } else {
                 header('Location: ../user_dashboard.html');
             }

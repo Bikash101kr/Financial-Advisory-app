@@ -3,71 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Responsive meta tag to ensure the website scales properly on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title displayed on the browser tab -->
     <title>User Dashboard - SecureFuture Financials</title>
+    <!-- Link to external CSS file for general styling -->
     <link rel="stylesheet" href="../style.css">
+    <!-- Link to Font Awesome for icons like logout -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
+        /* Dashboard container styling - gives it a clean, professional look */
         .dashboard {
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
             padding: 20px;
             margin-top: 20px;
         }
 
+        /* Main dashboard heading */
         .dashboard h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #004d99;
+            color: #004d99; /* Primary blue color */
         }
 
+        /* Welcome message styling */
         .dashboard .welcome-message {
             font-size: 18px;
             margin-bottom: 20px;
-            color: #333;
-            text-align: center;
+            color: #333; /* Dark grey text */
+            text-align: center; /* Center the text */
         }
 
+        /* Table structure and styling */
         table {
-            width: 100%;
-            border-collapse: collapse;
+            width: 100%; /* Full width */
+            border-collapse: collapse; /* Remove gaps between cells */
         }
 
+        /* Table header and cell padding and border */
         table th,
         table td {
             padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
+            border: 1px solid #ddd; /* Light grey borders between cells */
+            text-align: left; /* Align text to the left in each cell */
         }
 
+        /* Table header background color */
         table th {
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* Light grey background for headers */
         }
 
+        /* Alternate row background color for better readability */
         table tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Light grey background for even rows */
         }
 
+        /* Row hover effect to highlight the current row */
         table tbody tr:hover {
-            background-color: #f1f1f1;
+            background-color: #f1f1f1; /* Slightly darker grey background on hover */
         }
 
+        /* Styling for action buttons (e.g., edit, delete) */
         .action-buttons a,
         .action-buttons button {
-            background-color: #004d99;
-            color: #fff;
+            background-color: #004d99; /* Primary blue color */
+            color: #fff; /* White text */
             border: none;
             padding: 5px 10px;
             border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
+            text-decoration: none; /* Remove underline from links */
+            cursor: pointer; /* Pointer cursor for button */
         }
 
+        /* Edit button has a different background color (orange) */
         .action-buttons a.edit {
             background-color: #ff9800;
         }
 
+        /* Delete button has a red background */
         .action-buttons a.delete {
             background-color: #f44336;
         }
@@ -75,14 +91,16 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header section with logo and navigation -->
     <header>
         <div class="container">
             <div class="logo">
+                <!-- Logo linking back to the homepage -->
                 <a href="#"><img src="../images/logo.png" alt="SecureFuture Financials Logo"></a>
             </div>
             <nav>
                 <ul>
+                    <!-- Navigation links to dashboard and logout -->
                     <li><a href="user_dashboard.php">Dashboard</a></li>
                     <li><a href="logout.php" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 </ul>
@@ -90,71 +108,58 @@
         </div>
     </header>
 
-    <!-- User Dashboard Content -->
+    <!-- Main content: User dashboard with user details and investment portfolio -->
     <div class="container">
         <section class="dashboard">
             <h1>User Dashboard</h1>
             <div class="welcome-message">
-                Welcome,
-                <?php echo htmlspecialchars($user['name']); ?>! Here you can view your details and investment portfolio.
+                <!-- Welcome message displaying the user's name using PHP -->
+                Welcome, <?php echo htmlspecialchars($user['name']); ?>! Here you can view your details and investment portfolio.
             </div>
 
+            <!-- Section to display user details -->
             <h2>User Details</h2>
             <table>
                 <tr>
                     <th>User ID</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['user_id']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['user_id']); ?></td>
                 </tr>
                 <tr>
                     <th>Name</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['name']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['name']); ?></td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['email']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['email']); ?></td>
                 </tr>
                 <tr>
                     <th>Address</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['address']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['address']); ?></td>
                 </tr>
                 <tr>
                     <th>Phone</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['phone']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['phone']); ?></td>
                 </tr>
                 <tr>
                     <th>Role</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['role']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['role']); ?></td>
                 </tr>
                 <tr>
                     <th>Created On</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['created_on']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['created_on']); ?></td>
                 </tr>
                 <tr>
                     <th>Modified On</th>
-                    <td>
-                        <?php echo htmlspecialchars($user['modified_on']); ?>
-                    </td>
+                    <td><?php echo htmlspecialchars($user['modified_on']); ?></td>
                 </tr>
             </table>
 
+            <!-- Section to display the user's investment portfolio -->
             <h2>Investment Portfolio</h2>
             <table>
                 <thead>
                     <tr>
+                        <!-- Table headers for the portfolio -->
                         <th>Investment ID</th>
                         <th>Investment Type</th>
                         <th>Amount</th>
@@ -163,27 +168,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Check if the user has any investments in their portfolio -->
                     <?php if (!empty($portfolio)): ?>
+                    <!-- Loop through the portfolio items and display them -->
                     <?php foreach ($portfolio as $portfolio): ?>
                     <tr>
-                        <td>
-                            <?php echo htmlspecialchars($portfolio['port_id']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($portfolio['type']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars(number_format($portfolio['amount'], 2)); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($portfolio['date']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($portfolio['status']); ?>
-                        </td>
+                        <td><?php echo htmlspecialchars($portfolio['port_id']); ?></td>
+                        <td><?php echo htmlspecialchars($portfolio['type']); ?></td>
+                        <td><?php echo htmlspecialchars(number_format($portfolio['amount'], 2)); ?></td>
+                        <td><?php echo htmlspecialchars($portfolio['date']); ?></td>
+                        <td><?php echo htmlspecialchars($portfolio['status']); ?></td>
                     </tr>
                     <?php endforeach; ?>
                     <?php else: ?>
+                    <!-- If no portfolio exists, display a message -->
                     <tr>
                         <td colspan="5">No portfolio found</td>
                     </tr>
@@ -193,9 +191,10 @@
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer section -->
     <footer>
         <div class="container">
+            <!-- Copyright notice -->
             <p>&copy; 2024 SecureFuture Financials. All rights reserved.</p>
         </div>
     </footer>

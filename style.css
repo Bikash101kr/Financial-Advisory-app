@@ -166,7 +166,7 @@ header .logo img {
 }
 
 
-/* Overlay for Darkening the Background */
+/* Overlay to Darken the Background */
 .hero-overlay-video {
     position: absolute;
     top: 0;
@@ -193,7 +193,7 @@ header .logo img {
     color: #fff;
 }
 
-/* Contact Info and Form Section */
+/* Contact Information and Form Section */
 .content-section {
     padding: 50px 0;
     text-align: center;

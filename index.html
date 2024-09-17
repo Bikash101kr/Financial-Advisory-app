@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureFuture Financials</title>
+    <title>SecureFuture Financials - Your Partner in Financial Stability</title>
+    <!-- Meta Description for Home Page -->
+    <meta name="description"
+        content="SecureFuture Financials offers personalized financial planning, investment strategies, and retirement solutions to help you achieve long-term financial stability and peace of mind.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="financial planning, investment strategies, retirement planning, wealth management, financial stability">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -14,27 +22,46 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="SecureFuture Financials Logo"></a>
+                <a href="index.html" title="Return to SecureFuture Financials Homepage" aria-label="Return to homepage">
+                    <img src="images/logo.png" alt="SecureFuture Financials Logo - Your Partner in Financial Stability">
+                </a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Static/about-us.html">About Us</a></li>
+                    <li><a href="index.html" title="Navigate to the SecureFuture Financials homepage"
+                            aria-label="Go to homepage">Home</a></li>
+                    <li><a href="Static/about-us.html"
+                            title="Learn about SecureFuture Financials, including our mission and team"
+                            aria-label="Learn about our mission and team">About Us</a></li>
                     <li class="dropdown">
-                        <a href="Static/services.html">Services</a>
+                        <a href="Static/services.html"
+                            title="Explore the financial services offered by SecureFuture Financials"
+                            aria-label="Explore our services">Services</a>
                         <ul class="dropdown-content">
-                            <li><a href="Static/services/financial-planning.html">Financial Planning</a></li>
-                            <li><a href="Static/services/investment-plan.html">Investment Plan</a></li>
-                            <li><a href="Static/services/retirement-plan.html">Retirement Plan</a></li>
+                            <li><a href="Static/services/financial-planning.html"
+                                    title="Detailed information about Financial Planning services"
+                                    aria-label="Learn about Financial Planning">Financial Planning</a></li>
+                            <li><a href="Static/services/investment-plan.html"
+                                    title="Explore our Investment Plan services"
+                                    aria-label="Find out about Investment Plan services">Investment Plan</a></li>
+                            <li><a href="Static/services/retirement-plan.html"
+                                    title="Comprehensive Retirement Plan services"
+                                    aria-label="Discover our Retirement Plan options">Retirement Plan</a></li>
                         </ul>
                     </li>
-                    <li><a href="Static/blog.html">Blog</a></li>
-                    <li><a href="Static/gallery.html">Gallery</a></li>
-                    <li><a href="Static/contact.html">Contact</a></li>
+                    <li><a href="Static/blog.html" title="Visit our Blog for financial tips and insights"
+                            aria-label="Visit our blog for tips and insights">Blog</a></li>
+                    <li><a href="Static/gallery.html" title="View our Gallery of client success stories"
+                            aria-label="View client success stories">Gallery</a></li>
+                    <li><a href="Static/contact.html" title="Contact SecureFuture Financials for consultations"
+                            aria-label="Contact us for consultations">Contact</a></li>
                     <!-- New Login/Register Options -->
-                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                    <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
-                    <li><a href="Static/contact.html" class="btn">Book a Consultation</a></li>
+                    <li><a href="login.html" title="Log in to your SecureFuture Financials account"
+                            aria-label="Log in to your account"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="register.html" title="Register a new account with SecureFuture Financials"
+                            aria-label="Register a new account"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li><a href="Static/contact.html" class="btn" title="Book a consultation with our financial experts"
+                            aria-label="Book a financial consultation">Book a Consultation</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,12 +70,13 @@
     <!-- Hero Section with Video Background -->
     <section class="hero-video">
         <div class="hero-overlay"></div>
-        <video autoplay muted loop class="background-video">
+        <video autoplay muted loop class="background-video"
+            aria-label="Background video showcasing SecureFuture Financials services">
             <source src="videos/secure_future.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="container hero-content">
-            <h2>"Invest in Yourself,<br>Invest in Your Future"</h2>
+            <h1>"Invest in Yourself,<br>Invest in Your Future"</h1>
             <p>We see financial advice differently. We work alongside you to craft and manage a unique wealth strategy.
             </p>
         </div>
@@ -57,7 +85,7 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>Who We Are?</h2>
+            <h2>Who We Are</h2>
             <p>We specialize in strategic wealth management services, offering expert advice in asset management,
                 investment, and estate planning.</p>
             <p>Our approach ensures capital preservation while maximizing returns, giving you peace of mind and
@@ -71,22 +99,31 @@
             <h2>Our Core Services</h2>
             <div class="services-grid">
                 <article class="service-card">
-                    <img src="images/financial-planning-icon.png" alt="Financial Planning">
+                    <img src="images/financial-planning-icon.png"
+                        alt="Financial Planning Icon - Personalized financial planning services">
                     <h3>Financial Planning</h3>
                     <p>Guidance and tools to secure your financial future with a personalized approach.</p>
-                    <a href="services/financial-planning.html" class="btn">Learn More</a>
+                    <a href="Static/services/financial-planning.html" class="btn"
+                        title="Learn more about our Financial Planning services"
+                        aria-label="Learn more about Financial Planning services">Learn More</a>
                 </article>
                 <article class="service-card">
-                    <img src="images/investment-plan-icon.png" alt="Investment Plan">
+                    <img src="images/investment-plan-icon.png"
+                        alt="Investment Plan Icon - Tailored investment strategies">
                     <h3>Investment Plan</h3>
                     <p>Grow your wealth with tailored investment strategies that balance risk and reward.</p>
-                    <a href="services/investment-plan.html" class="btn">Learn More</a>
+                    <a href="Static/services/investment-plan.html" class="btn"
+                        title="Explore our Investment Plan services" aria-label="Explore Investment Plan services">Learn
+                        More</a>
                 </article>
                 <article class="service-card">
-                    <img src="images/retirement-plan-icon.png" alt="Retirement Plan">
+                    <img src="images/retirement-plan-icon.png"
+                        alt="Retirement Plan Icon - Comprehensive planning for a secure retirement">
                     <h3>Retirement Plan</h3>
                     <p>Secure a comfortable retirement with our comprehensive planning services.</p>
-                    <a href="services/retirement-plan.html" class="btn">Learn More</a>
+                    <a href="Static/services/retirement-plan.html" class="btn"
+                        title="Find out more about our Retirement Plan services"
+                        aria-label="Find out more about Retirement Plan services">Learn More</a>
                 </article>
             </div>
         </div>
@@ -98,19 +135,24 @@
             <h2>Latest from Our Blog</h2>
             <div class="blog-grid">
                 <article class="blog-card">
-                    <img src="images/retirement-planning.jpg" alt="Retirement Planning">
+                    <img src="images/retirement-planning.jpg"
+                        alt="Blog Post on Retirement Planning - Tips for Starting Early">
                     <div class="card-content">
                         <h3>How to Start Planning for Retirement in Your 30s</h3>
                         <p>Retirement planning is crucial, no matter your age. Here's how to get started...</p>
-                        <a href="blog.html" class="btn">Read More</a>
+                        <a href="Static/blog.html" class="btn"
+                            title="Read our blog post on retirement planning in your 30s"
+                            aria-label="Read more about retirement planning strategies in your 30s">Read More</a>
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="images/investment.jpg" alt="Investment Strategies">
+                    <img src="images/investment.jpg"
+                        alt="Blog Post on Investment Strategies - Top 5 Strategies for 2024">
                     <div class="card-content">
                         <h3>Top 5 Investment Strategies for 2024</h3>
                         <p>Looking to invest? Here are five strategies that could make a difference...</p>
-                        <a href="blog.html" class="btn">Read More</a>
+                        <a href="Static/blog.html" class="btn" title="Discover the top investment strategies for 2024"
+                            aria-label="Discover top investment strategies for 2024">Read More</a>
                     </div>
                 </article>
             </div>
@@ -120,31 +162,37 @@
     <!-- About Us Highlights Section -->
     <section id="about-us-highlights" class="content-section">
         <div class="container">
-            <h2>About Secure Future Financials</h2>
+            <h2>About SecureFuture Financials</h2>
             <div class="about-grid">
                 <article class="about-card">
-                    <img src="images/mission.png" alt="Our Mission">
+                    <img src="images/mission.png" alt="Our Mission - Providing personalized financial solutions">
                     <div class="card-content">
                         <h3>Our Mission</h3>
                         <p>Providing personalized financial solutions to help you achieve your long-term goals.</p>
-                        <a href="about-us.html" class="btn">Learn More</a>
+                        <a href="Static/about-us.html" class="btn" title="Learn more about our mission"
+                            aria-label="Learn more about our mission to offer personalized financial solutions">Learn
+                            More</a>
                     </div>
                 </article>
                 <article class="about-card">
-                    <img src="images/vision.png" alt="Our Vision">
+                    <img src="images/vision.png" alt="Our Vision - To be the most trusted financial advisory firm">
                     <div class="card-content">
                         <h3>Our Vision</h3>
                         <p>We strive to be the most trusted financial advisory firm, securing a brighter future for all.
                         </p>
-                        <a href="about-us.html" class="btn">Learn More</a>
+                        <a href="Static/about-us.html" class="btn" title="Discover our vision"
+                            aria-label="Discover our vision to become the most trusted financial advisory firm">Learn
+                            More</a>
                     </div>
                 </article>
                 <article class="about-card">
-                    <img src="images/history.jpg" alt="Our History">
+                    <img src="images/history.jpg" alt="Our History - Celebrating 20 years of financial excellence">
                     <div class="card-content">
                         <h3>Our History</h3>
-                        <p>With 20 years of success in the financial industry, we continue to deliver excellence.</p>
-                        <a href="about-us.html" class="btn">Learn More</a>
+                        <p>Celebrating over two decades of financial excellence and client success stories.</p>
+                        <a href="Static/about-us.html" class="btn" title="Explore our history"
+                            aria-label="Explore our history of providing excellent financial services for over 20 years">Learn
+                            More</a>
                     </div>
                 </article>
             </div>
@@ -157,23 +205,27 @@
             <h2>Ready to Secure Your Financial Future?</h2>
             <p>Contact us today to book a consultation and discover how our personalized financial solutions can benefit
                 you.</p>
-            <a href="contact.html" class="btn cta-btn">Get Started</a>
+            <a href="Static/contact.html" class="btn cta-btn" title="Get started with SecureFuture Financials"
+                aria-label="Get started with SecureFuture Financials">Get Started</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Secure Future Financials. All rights reserved.</p>
+            <p>&copy; 2024 SecureFuture Financials. All rights reserved.</p>
             <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
+                <a href="https://facebook.com" title="Follow SecureFuture Financials on Facebook"
+                    aria-label="Follow us on Facebook">Facebook</a>
+                <a href="https://twitter.com" title="Follow SecureFuture Financials on Twitter"
+                    aria-label="Follow us on Twitter">Twitter</a>
+                <a href="https://linkedin.com" title="Connect with SecureFuture Financials on LinkedIn"
+                    aria-label="Connect with us on LinkedIn">LinkedIn</a>
+                <a href="https://instagram.com" title="Follow SecureFuture Financials on Instagram"
+                    aria-label="Follow us on Instagram">Instagram</a>
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>

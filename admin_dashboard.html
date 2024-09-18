@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - SecureFuture Financials</title>
+    <!-- Linking the main stylesheet for the site -->
     <link rel="stylesheet" href="../style.css">
+    <!-- Linking Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Styling for the dashboard container */
         .dashboard {
             background-color: #fff;
             border-radius: 8px;
@@ -16,12 +19,14 @@
             margin-top: 20px;
         }
 
+        /* Styling for the dashboard header */
         .dashboard h1 {
             text-align: center;
             margin-bottom: 20px;
             color: #004d99;
         }
 
+        /* Styling for the welcome message */
         .dashboard .welcome-message {
             font-size: 18px;
             margin-bottom: 20px;
@@ -29,11 +34,13 @@
             text-align: center;
         }
 
+        /* Table styling for user data display */
         table {
             width: 100%;
             border-collapse: collapse;
         }
 
+        /* Table cell padding and border */
         table th,
         table td {
             padding: 10px;
@@ -41,23 +48,28 @@
             text-align: left;
         }
 
+        /* Styling for table header */
         table th {
             background-color: #f4f4f4;
         }
 
+        /* Alternate row background for better readability */
         table tbody tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
+        /* Row hover effect */
         table tbody tr:hover {
             background-color: #f1f1f1;
         }
 
+        /* Styling for the action buttons (edit, delete) */
         .action-buttons {
             display: flex;
             gap: 10px;
         }
 
+        /* General button styling */
         .action-buttons a,
         .action-buttons button {
             background-color: #004d99;
@@ -69,10 +81,12 @@
             cursor: pointer;
         }
 
+        /* Specific styling for edit button */
         .action-buttons a.edit {
             background-color: #ff9800;
         }
 
+        /* Specific styling for delete button */
         .action-buttons a.delete {
             background-color: #f44336;
         }
@@ -80,9 +94,10 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header section of the admin dashboard -->
     <header>
         <div class="container">
+            <!-- Logo and navigation links -->
             <div class="logo">
                 <a href="#"><img src="../images/logo.png" alt="SecureFuture Financials Logo"></a>
             </div>
@@ -95,15 +110,19 @@
         </div>
     </header>
 
-    <!-- Admin Dashboard Content -->
+    <!-- Main content section: Admin Dashboard -->
     <div class="container">
         <section class="dashboard">
             <h1>Admin Dashboard</h1>
+            <!-- Displaying a welcome message to the admin -->
             <div class="welcome-message">
                 Welcome, Admin! Here you can manage user details and oversee the entire system.
             </div>
+            
+            <!-- Table for displaying user details -->
             <table>
                 <thead>
+                    <!-- Defining the column headers for user data -->
                     <tr>
                         <th>User ID</th>
                         <th>Name</th>
@@ -117,42 +136,31 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- PHP: Loop through users and display them in table rows -->
                     <?php if (!empty($users)): ?>
                     <?php foreach ($users as $user): ?>
                     <tr>
-                        <td>
-                            <?php echo htmlspecialchars($user['user_id']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['name']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['email']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['address']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['phone']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['role']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['created_on']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($user['modified_on']); ?>
-                        </td>
+                        <!-- Display user details -->
+                        <td><?php echo htmlspecialchars($user['user_id']); ?></td>
+                        <td><?php echo htmlspecialchars($user['name']); ?></td>
+                        <td><?php echo htmlspecialchars($user['email']); ?></td>
+                        <td><?php echo htmlspecialchars($user['address']); ?></td>
+                        <td><?php echo htmlspecialchars($user['phone']); ?></td>
+                        <td><?php echo htmlspecialchars($user['role']); ?></td>
+                        <td><?php echo htmlspecialchars($user['created_on']); ?></td>
+                        <td><?php echo htmlspecialchars($user['modified_on']); ?></td>
+                        
+                        <!-- Action buttons for Edit and Delete -->
                         <td class="action-buttons">
-                            <a href="delete.php?id=<?php echo $user['user_id']; ?>" class="delete"
-                                onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
-
-                            <a href="edit.php?id=<?php echo $user['user_id']; ?>" class="edit">Edit </a>
+                            <!-- Delete button with confirmation prompt -->
+                            <a href="delete.php?id=<?php echo $user['user_id']; ?>" class="delete" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                            <!-- Edit button linking to the edit page -->
+                            <a href="edit.php?id=<?php echo $user['user_id']; ?>" class="edit">Edit</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
                     <?php else: ?>
+                    <!-- Display message if no users found -->
                     <tr>
                         <td colspan="8">No users found</td>
                     </tr>
@@ -163,7 +171,7 @@
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer section -->
     <footer>
         <div class="container">
             <p>&copy; Copyright 2024 Secure Future Financials. All rights reserved.</p>

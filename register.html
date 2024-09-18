@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - SecureFuture Financials</title>
+    <!-- Link to external CSS file for overall styling -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         /* Registration Page Styling */
+        
+        /* Flexbox layout to center the registration form on the page */
         .register-page {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 80px);
-            /* Adjust height according to header */
+            height: calc(100vh - 80px); /* Adjusts for header height */
             background: url('images/background.jpg') no-repeat center center;
             background-size: cover;
             position: relative;
         }
 
+        /* Dark overlay on the background image to enhance text readability */
         .register-page::before {
             content: "";
             position: absolute;
@@ -27,104 +32,112 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            /* Dark overlay for better text readability */
+            background: rgba(0, 0, 0, 0.3); /* 30% black overlay */
         }
 
+        /* Registration form container styling */
         .register-container {
             position: relative;
-            background: rgba(255, 255, 255, 0.9);
-            /* Slightly transparent white background */
+            background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for a 3D effect */
             width: 100%;
             max-width: 500px;
             text-align: center;
-            z-index: 1;
+            z-index: 1; /* Ensures form is above the overlay */
         }
 
+        /* Registration form heading styling */
         .register-container h2 {
             margin-bottom: 20px;
-            color: #007BFF;
+            color: #007BFF; /* Blue color for the title */
             font-size: 24px;
         }
 
+        /* Input field styling for text, email, password, and phone fields */
         .register-container input {
-            width: calc(100% - 20px);
+            width: calc(100% - 20px); /* Full width with some padding */
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-sizing: border-box;
             display: block;
-            margin: 0 auto 15px;
+            margin: 0 auto 15px; /* Centers inputs and adds spacing between fields */
         }
 
+        /* Button styling for the Register button */
         .register-container button {
-            width: calc(100% - 20px);
+            width: calc(100% - 20px); /* Full width button */
             padding: 15px;
-            background-color: #007BFF;
-            color: #fff;
+            background-color: #007BFF; /* Blue background */
+            color: #fff; /* White text */
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto; /* Centered button */
         }
 
+        /* Dropdown (select) field styling */
         .register-container select {
-            width: calc(100% - 20px);
+            width: calc(100% - 20px); /* Full width with some padding */
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-sizing: border-box;
             display: block;
-            margin: 0 auto 15px;
+            margin: 0 auto 15px; /* Centers select element */
             background-color: white;
             font-size: 16px;
             background-repeat: no-repeat;
-            background-position: right 10px center;
+            background-position: right 10px center; /* Arrow positioning */
             background-size: 10px;
         }
 
+        /* Hover effect for the Register button */
         .register-container button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Darker blue on hover */
         }
 
+        /* Styling for the footer text under the form */
         .register-container .footer {
             margin-top: 20px;
             font-size: 14px;
             color: #555;
         }
 
+        /* Styling for links in the footer */
         .register-container .footer a {
-            color: #007BFF;
+            color: #007BFF; /* Blue text for links */
             text-decoration: none;
         }
 
+        /* Hover effect for links in the footer */
         .register-container .footer a:hover {
             text-decoration: underline;
         }
 
-        /* Enhanced Error Message Styling */
+        /* Error message styling when passwords do not match */
         .error-message {
-            color: #dc3545;
+            color: #dc3545; /* Red text */
             font-size: 14px;
             margin-top: -10px;
             margin-bottom: 15px;
-            display: none;
-            background-color: #f8d7da;
+            display: none; /* Initially hidden */
+            background-color: #f8d7da; /* Light red background for error */
             border: 1px solid #f5c6cb;
             border-radius: 5px;
             padding: 10px;
             text-align: left;
             position: relative;
-            z-index: 1;
+            z-index: 1; /* Ensures error message is above form */
         }
 
+        /* FontAwesome icon for error message (for visual cue) */
         .error-message::before {
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
@@ -137,16 +150,19 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <div class="container">
+            <!-- Logo section linking back to home page -->
             <div class="logo">
                 <a href="index.html"><img src="images/logo.png" alt="SecureFuture Financials Logo"></a>
             </div>
+            <!-- Navigation menu -->
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Static/about-us.html">About Us</a></li>
+                    <!-- Dropdown for services menu -->
                     <li class="dropdown">
                         <a href="Static/services.html">Services</a>
                         <ul class="dropdown-content">
@@ -159,7 +175,7 @@
                     <li><a href="Static/gallery.html">Gallery</a></li>
                     <li><a href="Static/contact.html">Contact</a></li>
                     <li><a href="Static/contact.html" class="btn">Book a Consultation</a></li>
-                    <!-- New Login/Register Options -->
+                    <!-- Login and Register links with icons -->
                     <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                     <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
                 </ul>
@@ -171,32 +187,38 @@
     <div class="register-page">
         <div class="register-container">
             <h2>Register</h2>
+            <!-- Registration form with POST method -->
             <form id="registrationForm" method="POST" action="php/Register.php">
+                <!-- Input fields for user data -->
                 <input type="text" name="user_id" placeholder="USER ID" required>
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password"
-                    required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
                 <input type="text" name="address" placeholder="Address" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
+                <!-- Role selection dropdown -->
                 <select name="role" required>
                     <option value="" disabled selected>Select your role</option>
                     <option value="user">user</option>
                 </select>
+                <!-- Register button -->
                 <button type="submit" name="register">Register</button>
+                <!-- Error message for password mismatch -->
                 <div class="error-message" id="error-message">Passwords do not match!</div>
             </form>
+            <!-- Footer with link to login page -->
             <div class="footer">
                 <p>Already have an account? <a href="login.html">Login</a></p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
         <div class="container">
             <p>&copy; Copyright 2024 Secure Future Financials. All rights reserved.</p>
+            <!-- Social media links -->
             <div class="social-links">
                 <a href="#">Facebook</a>
                 <a href="#">Twitter</a>
@@ -206,17 +228,20 @@
         </div>
     </footer>
 
+    <!-- JavaScript for form validation -->
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            // Get the password and confirm password field values
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirm_password').value;
             var errorMessage = document.getElementById('error-message');
 
+            // Check if passwords match, display error message if not
             if (password !== confirmPassword) {
-                errorMessage.style.display = 'block';
+                errorMessage.style.display = 'block'; // Show error message
                 event.preventDefault(); // Prevent form submission
             } else {
-                errorMessage.style.display = 'none';
+                errorMessage.style.display = 'none'; // Hide error message if passwords match
             }
         });
     </script>

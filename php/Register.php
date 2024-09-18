@@ -51,7 +51,7 @@ try {
 
             // Execute the query to insert the user
             if ($stmt->execute()) {
-                echo "<script>alert('Registration successful! You can now login.'); window.location.href = 'login.html';</script>";
+                echo "<script>alert('Registration successful! You can now login.'); window.location.href = '../login.html';</script>";
             } else {
                 echo "<script>alert('Error occurred during registration.'); window.location.href = 'register.html';</script>";
             }
